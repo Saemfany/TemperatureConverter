@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial;
+      font-size: 12px;
+      border: 1px solid black;
+    }
+
+    .box-container {
+      display:flex;
+      justify-content: flex-end;
+      border-bottom: 1px solid black;
+      padding: 20px;      
+    }
+
+    /* Flex Container for Items */
+    .flex-container {
+      width: 400px;
+      display: flex;
+      border: 1px solid black;
+      border-radius: 5px;
+      overflow: hidden; /* Ensure children with rounded corners stay within the box */
+    }
+
+    /* Style for Box Items */
+    .box-item {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border-right: 1px solid black;      
+    }
+
+    /* Remove border on the last item */
+    .box-item:last-child {
+      border-right: none;
+    }
+    
+    .logo {
+      margin-right: auto;
+    }
+
+    h1, p {
+      margin-left: 26px;
+    }
+
+    /* Container for Tables using Flexbox */
+    .table-container {
+      display: flex;
+      
+      margin: 20px;
+    }
+
+    /* Style for Table 1 */
+    .table1 {
+      width: 40%;
+      justify-content: left;
+    }
+
+    .table1 td {
+      padding: 5px;
+      text-align: left;      
+    }
+
+    /* Style for Table 2 */
+    .table2 {
+      border-collapse: collapse;
+      width: 60%;
+      justify-content: right;
+    }
+
+    .table2 th, .table2 td {
+      border: 1px solid #ddd;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .table2 th {
+      background-color: #f2f2f2;
+    }
+
+    /* Style for Input */
+    .input-box {
+      width: 90%;
+      padding: 5px;
+      box-sizing: border-box;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 93%;
+      padding: 5px;
+      cursor: pointer;
+      background-color: #f2f2f2;
+      color: black;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+    
+    footer > p {
+      margin-left: -1px;
+      margin-bottom: -1px;
+      text-align: end;
+      border-top: 1px solid black; /* Add border to the container */
+      padding: 20px; /* Optional: Add padding to the container */
+    }
+
+  </style>
+  <title>Form Belajar</title>
+</head>
+<body>
+  <nav class="box-container">
+    <img src="https://th.bing.com/th/id/OIP.1p37L6YtdXl6NK2PyROt8gHaHa?rs=1&pid=ImgDetMain" class="logo" width="40" height="40">
+    <div class="flex-container">
+      <div class="box-item">Home</div>
+      <div class="box-item">My Profile</div>
+      <div class="box-item">Portofolio</div>
+      <div class="box-item">Message Us</div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Form Belajar</h1>
+    <p>Ini adalah website latihan pertama.</p>
+  </header>
+    
+  <div class="table-container">
+    <!-- Table 1 -->
+    <table class="table1">
+      <tbody>
+        <tr>
+          <td>Nama</td>
+          <td>:</td>
+          <td><input type="text" class="input-box" placeholder="Nama"></td>
+        </tr>
+        <tr>
+          <td>Tanggal Lahir</td>
+          <td>:</td>
+          <td><input type="date" class="input-box"></td>
+        </tr>
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>:</td>
+          <td><input type="radio" name="jenis_kelamin" value="pria">Laki-laki<input type="radio" name="jenis_kelamin" value="perempuan">Perempuan</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Pesan</td>
+          <td style="vertical-align: top;">:</td>
+          <td><textarea class="input-box" rows="5" placeholder="Pesan"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="3"><button onclick="alert('Button 1 Clicked')">Submit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Table 2 -->
+    <table class="table2">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Tanggal Lahir</th>
+          <th>Jenis Kelamin</th>
+          <th>Pesan</th>
+          <th>Profile</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ada Lovelace</td>
+          <td>December 10, 1815</td>
+          <td>Perempuan</td>
+          <td>Belajar Buat Website</td>
+          <td><a href="https://www.google.com/">Klik Di sini</a></td>
+          <td><img src="trash bin.png" width="15px" height="15px"></img></td>
+        </tr>
+        <tr>
+          <td>Grace Hopper</td>
+          <td>December 9, 1906</td>
+          <td>Perempuan</td>
+          <td>Hello World</td>
+          <td><a href="https://www.google.com/">Klik Di sini</a></td>
+          <td><img src="trash bin.png" width="15px" height="15px"></img></td>
+        </tr>
+        <tr>
+          <td>Margaret Hamilton</td>
+          <td>August 17, 1936</td>
+          <td>Perempuan</td>
+          <td>Test Dulu</td>
+          <td><a href="https://www.google.com/">Klik Di sini</a></td>
+          <td><img src="trash bin.png" width="15px" height="15px"></img></td>
+        </tr>
+        <tr>
+          <td>Joan Clarke</td>
+          <td>June 24,1917</td>
+          <td>Laki-laki</td>
+          <td>Selalu Semangat</td>
+          <td><a href="https://www.google.com/">Klik Di sini</a></td>
+          <td><img src="trash bin.png" width="15px" height="15px"></img></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>Created by Revou</p>
+  </footer>
+
+</body>
+</html>

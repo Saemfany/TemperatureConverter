@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Style for Scroll to Top Button */
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    /* Style for Navigation Link */
+    #scrollToTopLink {
+      position: fixed;
+      bottom: 20px;
+      right: 80px;
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+  <title>Scroll to Top Link</title>
+</head>
+<body>
+
+  <!-- Navigation Link to Scroll to Top -->
+  <a href="#top" id="scrollToTopLink">Scroll to Top</a>
+
+  <!-- Content of the page goes here -->
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">Scroll to Top</button>
+
+  <!-- JavaScript to handle scrolling -->
+  <script>
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+
+    // Show/hide the button based on scroll position
+    window.onscroll = function() {
+      var btn = document.getElementById("scrollToTopBtn");
+
+      // Display the button when scrolling down
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+</html>

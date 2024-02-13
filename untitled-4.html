@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #2980b9, #2c3e50); /* Gradient background */
+    color: #fff; /* Text color */
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .error {
+    color: red;
+    font-size: 0.8em;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registration Form</h2>
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="nameError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span id="emailError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span id="passwordError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <span id="confirmPasswordError" class="error"></span>
+    </div>
+    <input type="submit" value="Register">
+  </form>
+</div>
+
+<script>
+function validateForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+  var isValid = true;
+
+  // Reset errors
+  document.getElementById("nameError").textContent = "";
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("passwordError").textContent = "";
+  document.getElementById("confirmPasswordError").textContent = "";
+
+  // Name validation
+  if (name.trim() === "") {
+    document.getElementById("nameError").textContent = "Name is required";
+    isValid = false;
+  }
+
+  // Email validation
+  if (email.trim() === "") {
+    document.getElementById("emailError").textContent = "Email is required";
+    isValid = false;
+  } else if (!isValidEmail(email)) {
+    document.getElementById("emailError").textContent = "Invalid email format";
+    isValid = false;
+  }
+
+  // Password validation
+  if (password.trim() === "") {
+    document.getElementById("passwordError").textContent = "Password is required";
+    isValid = false;
+  } else if (password.length < 6) {
+    document.getElementById("passwordError").textContent = "Password must be at least 6 characters long";
+    isValid = false;
+  }
+
+  // Confirm password validation
+  if (confirmPassword.trim() === "") {
+    document.getElementById("confirmPasswordError").textContent = "Please confirm password";
+    isValid = false;
+  } else if (password !== confirmPassword) {
+    document.getElementById("confirmPasswordError").textContent = "Passwords do not match";
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+function isValidEmail(email) {
+  // Simple email validation
+  var emailRegex = /\S+@\S+\.\S+/;
+  return emailRegex.test(email);
+}
+</script>
+
+</body>
+</html>

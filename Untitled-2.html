@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Style for Scroll to Top Link */
+    #scrollToTopLink {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+  <title>Scroll to Top Link</title>
+</head>
+<body>
+
+  <!-- Content of the page goes here -->
+
+  <!-- Scroll to Top Link -->
+  <a href="#" id="scrollToTopLink" onclick="scrollToTop()">Scroll to Top</a>
+
+  <!-- JavaScript to handle scrolling -->
+  <script>
+    // Function to smoothly scroll to the top of the page
+    function scrollToTop() {
+      // Get the current scroll position
+      const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+      // Calculate the step size for smooth scrolling
+      const scrollStep = -currentScroll / 20;
+
+      // Define the animation function
+      function scrollAnimation() {
+        // Calculate the new scroll position
+        const newScroll = document.documentElement.scrollTop || document.body.scrollTop + scrollStep;
+
+        // Set the new scroll position
+        document.documentElement.scrollTop = document.body.scrollTop = newScroll;
+
+        // Check if the scroll position is at the top
+        if (newScroll > 0) {
+          // Continue the animation
+          requestAnimationFrame(scrollAnimation);
+        }
+      }
+
+      // Start the animation
+      scrollAnimation();
+    }
+
+    // Show/hide the link based on scroll position
+    window.onscroll = function() {
+      var link = document.getElementById("scrollToTopLink");
+
+      // Display the link when scrolling down
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        link.style.display = "inline-block";
+      } else {
+        link.style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+</html>

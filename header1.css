@@ -1,0 +1,50 @@
+.container {
+    display:flex;
+    justify-content: flex-end;/*try to change this to center for example*/
+}
+
+.container > div {
+    padding:10px;
+    text-align: center;
+    font-size: 14sp;
+    color: black;
+    border: 1px solid;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.content {
+    flex-direction: row;
+    display: flex;
+}
+
+.content > div {
+    display: flex;
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+    align-items: center;    
+}
+
+footer > p{
+    text-align: end;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid rgb(180,180,180);    
+}
+
+th {
+    background-color: rgb(210, 210, 210);
+    border: 1px solid rgb(180,180,180);
+    padding: 10px 10px;
+}
+
+td {
+    text-align: center;
+    border: 1px solid rgb(180,180,180);
+    padding: 10px 10px;    
+}

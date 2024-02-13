@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempereture Converter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="js/script.js"></script>
+
+    <div class="container">
+        <div class="title">
+            <div class="title-1"></div>
+            <div class="title-2"></div>
+            <div class="title-3">
+                <h1>Tempereture<br>Converter</h1>
+                <div class="title-3-1">
+                    Celcius<span class="title-span1"> Reamur </span>
+                </div>
+                <div class="title-3-2">
+                    Fahrenheit<span class="title-span2"> Kelvin </span>
+                </div>
+            </div>
+        </div>
+                
+        <div class="InputOutput">
+            <label for="temperature">Enter Temperature:</label>
+            <input type="number" id="temperature" name="temperature">
+            <select id="unit" name="unit">
+                <option value="celsius">Celsius</option>
+                <option value="reamur">Reamur</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+            <button onclick="convertTemperature()">Convert</button>
+
+            <p id="result"></p>
+        </div>
+        
+        <div class="expl">
+            <h3>Explanation</h3>
+            <div>
+                <p id="explanation"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
