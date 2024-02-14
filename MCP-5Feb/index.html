@@ -14,9 +14,9 @@
             <div class="title-1"></div>
             <div class="title-2"></div>
             <div class="title-3">
-                <h1>Tempereture<br>Converter</h1>
+                <h1>Temperature<br>Converter</h1>
                 <div class="title-3-1">
-                    Celcius<span class="title-span1"> Reamur </span>
+                    Celsius<span class="title-span1"> Reamur </span>
                 </div>
                 <div class="title-3-2">
                     Fahrenheit<span class="title-span2"> Kelvin </span>
@@ -28,13 +28,13 @@
             <form id="temperatureForm" onsubmit="convertTemperature(); return false;">
                 <div class="form-group">
                   <label for="temperature">Temperature:</label>
-                  <input type="number" id="temperature" name="temperature" required>
+                  <input type="text" id="temperature" name="temperature" required>
                   <span id="temperatureError" class="error"></span>
                 </div>
                 <div class="form-group">
                   <label for="fromUnit">From:</label>
                   <select id="fromUnit" name="fromUnit">
-                    <option value="celcius">Celcius</option>
+                    <option value="celsius">Celsius</option>
                     <option value="reamur">Reamur</option>
                     <option value="fahrenheit">Fahrenheit</option>
                     <option value="kelvin">Kelvin</option>
@@ -43,24 +43,22 @@
                 <div class="form-group">
                   <label for="toUnit">To:</label>
                   <select id="toUnit" name="toUnit">
-                    <option value="celcius">Celcius</option>
+                    <option value="celsius">Celsius</option>
                     <option value="reamur">Reamur</option>
                     <option value="fahrenheit">Fahrenheit</option>
                     <option value="kelvin">Kelvin</option>
                   </select>
                 </div>
                 <input type="submit" value="Convert">
-              </form>
-              <div class="result" id="result"></div>
-            </div>
-            <!-- <p id="result"></p> -->
+            </form>
         </div>
         
         <div class="expl">
-            <h3>Explanation</h3>
-            <div>
+            <h3>Result:</h3>
+            <div class="result" id="result"></div>
+            <!-- <div>
                 <p id="explanation"></p>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
